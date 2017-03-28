@@ -7,12 +7,13 @@ services:
       - "80:80"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost"]
-      interval: 2s
+      interval: 1s
       timeout: 10s
       retries: 3
     deploy:
       replicas: 2
       update_config:
         parallelism: 1
+        delay: 5s
       restart_policy:
         condition: on-failure
