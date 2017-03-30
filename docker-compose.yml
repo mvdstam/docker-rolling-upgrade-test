@@ -11,7 +11,7 @@ services:
       timeout: 10s
       retries: 3
     deploy:
-      replicas: 2
+      mode: global
       update_config:
         parallelism: 1
         delay: 5s
